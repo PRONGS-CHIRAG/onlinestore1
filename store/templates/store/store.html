@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css.map">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.23),rgba(0, 0, 0, 0.24)),url('https://bia.lighting/wp-content/uploads/2016/04/Sign-Up-Background.png');
+            background-size: cover;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: orange;
+            font-weight: 50px;
+            font-family: sans-serif;
+        }
+
+            h1:hover {
+                color: white;
+            }
+
+        .form {
+            max-width: 400px;
+            background: rgba(0, 0, 0, .57);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 40px;
+            margin: auto;
+            color: white;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        input[type=text], input[type=number], input[type=email], input[type=date] {
+            width: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background: black;
+            border: none;
+            font-weight: 500;
+            font-size: 16px;
+            outline: none;
+            border-bottom: 1px solid white;
+            margin: 6px;
+            color: white;
+            padding: 12px 5px;
+        }
+
+        input[type=submit] {
+            cursor: pointer;
+            width: 200px;
+            margin-top: 25px;
+            margin-left: 60px;
+            border-radius: 18px;
+            font-size: 25px;
+            background-color: orange;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+            padding: 5px;
+            transition-duration: 0.4s;
+        }
+
+            input[type=submit]:hover {
+                background-color: black;
+                color: orange;
+                border: 1px solid orange;
+            }
+    </style>
+</head>
+<body>
+    <div class="form">
+
+        <h1> Enter Customer Information</h1>
+
+        <form   action="enterstore"method="post">
+          {% csrf_token %}
+            <input type="text" name="storename"  placeholder="Name">
+            <input type="text" name="inchargename" placeholder="Incharge name ">
+            <input type='number' name='phonenumber' placeholder='PhoneNumber'>
+            <input type='text' name='addresss' placeholder='Addresss'>
+            <input type="text" name="city" placeholder='City'>
+            <input type="text" name="state" placeholder='State'>
+            <input type="text" name="country" placeholder='Country'>
+            <input type="number" name="pincode" placeholder="Pincode">
+
+
+      <input type='submit'  name='submit' value="Submit">
+        </form>
+    </div>
+</body>
+</html>
